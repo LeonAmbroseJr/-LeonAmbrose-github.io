@@ -1,2 +1,2 @@
 data/basin_01031500.feather
-
+This is my first time creating a map using code, I used practice data, learned from my mistakes thankful for the name error to trace errors. Utilizing REM and DEM datasets, TIF and Shape files, USGS Coordinnances and tutorials. Now it is real world data from the "100 year," flood that occured in my homeland on the Pine Ridge Indian Reseevation. 2019. The BIA road 41 exiting from the South that goes to Rapid City was washed out. The flood Basin around thw town of nearby town of Interior South Dakota is locateds in a ancient flood plain, highway 44 bridge just going South East has yearly snow dams that buid up and 2019 was a mixture of snow and rain.. 
