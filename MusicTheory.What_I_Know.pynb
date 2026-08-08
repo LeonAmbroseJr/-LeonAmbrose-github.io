@@ -13,7 +13,7 @@
           "context": "hey"
         }
       },
-      "authorship_tag": "ABX9TyMay+tCVaENkwFmkRoNCkg3",
+      "authorship_tag": "ABX9TyOz7oItBFw8dake2mr8NTtZ",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -966,6 +966,50 @@
         "plt.grid(axis='y', linestyle='--', alpha=0.7)\n",
         "plt.tight_layout()\n",
         "plt.show()"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "f6b2c793"
+      },
+      "source": [
+        "import matplotlib.pyplot as plt\n",
+        "import seaborn as sns\n",
+        "\n",
+        "# Group by Mood and Chord Name and count occurrences\n",
+        "chord_mood_counts = df_analysis_results.groupby(['Mood', 'Chord Name']).size().unstack(fill_value=0)\n",
+        "\n",
+        "# Create the heatmap\n",
+        "fig = plt.figure(figsize=(14, 8))\n",
+        "sns.heatmap(chord_mood_counts, annot=True, fmt='d', cmap='viridis', linewidths=.5)\n",
+        "plt.title('Chord Frequency Heatmap by Mood')\n",
+        "plt.xlabel('Chord Name')\n",
+        "plt.ylabel('Mood')\n",
+        "plt.tight_layout()\n",
+        "plt.show()"
+      ],
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "81039028"
+      },
+      "source": [
+        "import pandas as pd\n",
+        "\n",
+        "# Group by Mood and Full Progression to count chords per progression\n",
+        "chords_per_progression = df_analysis_results.groupby(['Mood', 'Full Progression']).size().reset_index(name='Num Chords')\n",
+        "\n",
+        "# Calculate the average number of chords per mood\n",
+        "average_chords_per_mood = chords_per_progression.groupby('Mood')['Num Chords'].mean().reset_index()\n",
+        "\n",
+        "print(\"Average Number of Chords per Progression for Each Mood:\")\n",
+        "display(average_chords_per_mood)\n"
       ],
       "execution_count": null,
       "outputs": []
